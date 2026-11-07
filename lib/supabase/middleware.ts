@@ -59,7 +59,7 @@ export async function updateSession(request: NextRequest) {
           });
           response.cookies.set({
             name,
-            value,
+            value: "",
             ...options,
           });
         },
