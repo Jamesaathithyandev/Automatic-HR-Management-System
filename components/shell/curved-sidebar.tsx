@@ -44,7 +44,7 @@ export function CurvedSidebar({ className }: { className?: string }) {
   return (
     <aside
       className={cn(
-        "relative hidden md:flex flex-col items-center justify-between py-8 px-3 w-[84px] bg-brand-purple rounded-[32px] text-white shadow-float select-none shrink-0 transition-all",
+        "sticky top-0 left-0 hidden md:flex flex-col items-center justify-between py-6 px-3 w-[84px] lg:w-[88px] h-screen bg-brand-purple text-white shadow-float select-none shrink-0 z-40 rounded-r-[32px] transition-all",
         className
       )}
       aria-label="Sidebar navigation"

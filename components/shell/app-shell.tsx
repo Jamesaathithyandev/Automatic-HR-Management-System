@@ -22,33 +22,25 @@ export function AppShell({
   className,
 }: AppShellProps) {
   return (
-    <div className="min-h-screen bg-canvas flex items-center justify-center p-2.5 sm:p-5 md:p-8 transition-colors duration-300">
-      {/* Main Rounded Shell Container */}
-      <div
-        className={cn(
-          "w-full max-w-[1560px] bg-shell rounded-[32px] shadow-shell border border-border-light/50 p-4 sm:p-6 md:p-8 flex gap-5 md:gap-7 min-h-[92vh] relative overflow-hidden transition-colors duration-300",
-          className
-        )}
-      >
-        {/* Left Curved Inset Sidebar */}
-        <CurvedSidebar />
+    <div className="min-h-screen w-full bg-shell flex flex-col md:flex-row transition-colors duration-300 relative">
+      {/* Left Docked Curved Sidebar */}
+      <CurvedSidebar />
 
-        {/* Right Main Application Area */}
-        <div className="flex-1 flex flex-col min-w-0 pb-16 md:pb-0">
-          <TopNavBar
-            userRole={userRole}
-            onPrimaryAction={onPrimaryAction}
-            primaryActionLabel={primaryActionLabel}
-          />
+      {/* Main Full-Width Application Area */}
+      <div className="flex-1 flex flex-col min-w-0 px-4 sm:px-6 md:px-8 lg:px-10 py-5 pb-20 md:pb-8">
+        <TopNavBar
+          userRole={userRole}
+          onPrimaryAction={onPrimaryAction}
+          primaryActionLabel={primaryActionLabel}
+        />
 
-          <main className="flex-1 w-full flex flex-col min-w-0">
-            {children}
-          </main>
-        </div>
-
-        {/* Mobile Bottom Navigation Bar */}
-        <BottomTabBar />
+        <main className={cn("flex-1 w-full flex flex-col min-w-0", className)}>
+          {children}
+        </main>
       </div>
+
+      {/* Mobile Bottom Navigation Bar */}
+      <BottomTabBar />
     </div>
   );
 }
