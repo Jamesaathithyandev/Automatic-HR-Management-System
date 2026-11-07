@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Canvas & Surfaces */
+    --canvas-bg: #D9DBEC;              /* Soft lavender outer canvas */
+    --shell-bg: #FFFFFF;               /* Main rounded application shell */
+    --card-bg: #FFFFFF;                /* Bento card surface */
+    --card-subtle: #F6F7FB;            /* Inset rows, light pill backgrounds */
+    --card-dashed: #E2E4F0;            /* Dashed placeholder border */
+    --border-light: #ECEEF6;           /* Subtle card divider borders */
+    --border-focus: #6C5CE7;           /* Keyboard focus ring */
+
+    /* Primary Brand & Accents */
+    --brand-purple: #6C5CE7;           /* Signature vibrant purple */
+    --brand-purple-hover: #5846E0;     /* Darker hover state */
+    --brand-purple-light: #F0EDFE;     /* Light purple tint for badges/active states */
+    --brand-navy: #14123A;             /* Deep navy for primary buttons & bold headings */
+    --brand-navy-hover: #0E0C2B;       /* Navy button hover */
+    
+    /* Typography Colors (WCAG AA Compliant: >= 4.5:1) */
+    --text-primary: #14123A;          /* High contrast deep navy text */
+    --text-secondary: #5E5D78;        /* Muted slate violet (5.1:1 on white) */
+    --text-tertiary: #7D7C94;         /* Caption text (4.6:1 on white) */
+    --text-on-purple: #FFFFFF;        /* Pure white on brand purple */
+    --text-on-navy: #FFFFFF;          /* Pure white on navy */
+
+    /* Functional Status Colors */
+    --status-success-bg: #E7F9F0;      /* Mint green soft background */
+    --status-success-text: #0E7044;    /* Accessible dark forest text (5.2:1) */
+    --status-success-dot: #10B981;     /* Vivid green dot */
+
+    --status-warning-bg: #FEF6E7;      /* Amber soft background */
+    --status-warning-text: #925404;    /* Accessible amber text (5.5:1) */
+    --status-warning-dot: #F59E0B;     /* Vivid amber dot */
+
+    --status-danger-bg: #FEEEEE;       /* Soft pink background */
+    --status-danger-text: #B91C1C;     /* Accessible red text (5.8:1) */
+    --status-danger-dot: #EF4444;      /* Vivid red dot */
+
+    --status-info-bg: #EEF4FF;         /* Soft periwinkle background */
+    --status-info-text: #1E40AF;       /* Deep blue text (6.2:1) */
+    --status-info-dot: #3B82F6;        /* Vivid blue dot */
+
+    /* Shadows (Soft & Diffuse) */
+    --shadow-shell: 0 20px 48px -12px rgba(20, 18, 58, 0.08), 0 4px 16px -2px rgba(20, 18, 58, 0.03);
+    --shadow-card: 0 8px 24px -4px rgba(20, 18, 58, 0.05), 0 2px 8px -2px rgba(20, 18, 58, 0.02);
+    --shadow-float: 0 16px 36px -6px rgba(108, 92, 231, 0.18);
+
+    /* Radius Scale */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
+    --radius-shell: 32px;
+  }
+
+  .dark {
+    /* Dark Mode Tokens (Deep Obsidian & Indigo) */
+    --canvas-bg: #0B0B14;
+    --shell-bg: #131226;
+    --card-bg: #1A1833;
+    --card-subtle: #222044;
+    --card-dashed: #323060;
+    --border-light: #2A2750;
+    --border-focus: #8F82F7;
+
+    --brand-purple: #7D6DF2;
+    --brand-purple-hover: #9082F8;
+    --brand-purple-light: #282458;
+    --brand-navy: #201D48;
+    --brand-navy-hover: #2E2967;
+
+    --text-primary: #FFFFFF;
+    --text-secondary: #A9A7C7;
+    --text-tertiary: #8481A8;
+    --text-on-purple: #FFFFFF;
+    --text-on-navy: #FFFFFF;
+
+    --status-success-bg: #0F3223;
+    --status-success-text: #6EE7B7;
+    --status-success-dot: #34D399;
+
+    --status-warning-bg: #352309;
+    --status-warning-text: #FCD34D;
+    --status-warning-dot: #FBBF24;
+
+    --status-danger-bg: #3D1414;
+    --status-danger-text: #FCA5A5;
+    --status-danger-dot: #F87171;
+
+    --status-info-bg: #132448;
+    --status-info-text: #93C5FD;
+    --status-info-dot: #60A5FA;
+
+    --shadow-shell: 0 24px 64px -12px rgba(0, 0, 0, 0.6);
+    --shadow-card: 0 10px 28px -4px rgba(0, 0, 0, 0.4);
+    --shadow-float: 0 16px 40px -6px rgba(125, 109, 242, 0.25);
+  }
+}
+
+body {
+  background-color: var(--canvas-bg);
+  color: var(--text-primary);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-dashed);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

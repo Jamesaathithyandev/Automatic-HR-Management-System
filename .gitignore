@@ -1,0 +1,48 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing & reports
+/coverage
+/playwright-report/
+/test-results/
+
+# next.js build outputs
+/.next/
+/out/
+/build
+/dist
+
+# local env & secrets (never commit!)
+.env*.local
+.env
+.env.*
+!.env.example
+
+# logs & debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# system & OS
+.DS_Store
+Thumbs.db
+*.pem
+*.key
+*.cert
+*.crt
+
+# vercel
+.vercel
+
+# typescript & turbo
+*.tsbuildinfo
+next-env.d.ts
+.turbo
+
+# temporary scripts
+/scripts/
