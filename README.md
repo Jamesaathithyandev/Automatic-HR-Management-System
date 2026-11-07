@@ -11,6 +11,8 @@
 
 A scalable, secure, and privacy-respecting **Attendance Management System** designed for modern remote companies. Built with pixel-level fidelity to the modern dashboard design system featuring a soft lavender canvas (`#D9DBEC`), curved purple sidebar (`#6C5CE7`), rounded white shell container (`32px` radius), deep navy primary action buttons (`#14123A`), and a responsive Bento grid.
 
+> 📖 **Full Engineering Walkthrough**: For an end-to-end report of all architectural decisions, database schemas, Tamil Nadu calendar integration, bug fixes, and development phases, see [PROJECT_WALKTHROUGH.md](./PROJECT_WALKTHROUGH.md).
+
 ---
 
 ## 📸 Visual Design & Bento Architecture
